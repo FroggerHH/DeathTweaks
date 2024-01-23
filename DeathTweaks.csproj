@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{D36822A5-72CD-471A-9432-017F138CA2C1}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>DeathTweaks</RootNamespace>
+        <AssemblyName>DeathTweaks</AssemblyName>
+        <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+            <HintPath>..\..\..\Steam\steamapps\common\Valheim\BepInEx\core\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_guiutils">
+            <HintPath>..\Utils\assembly_guiutils_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_lux">
+            <HintPath>..\Utils\assembly_lux_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_sunshafts">
+            <HintPath>..\Utils\assembly_sunshafts_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_utils">
+            <HintPath>..\Utils\assembly_utils_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_valheim">
+            <HintPath>..\Utils\assembly_valheim_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+            <HintPath>..\..\..\Steam\steamapps\common\Valheim\BepInEx\core\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="Fishlabs.Common">
+            <HintPath>..\..\..\Steam\steamapps\common\Valheim\valheim_Data\Managed\Fishlabs.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="Fishlabs.Core">
+            <HintPath>..\Utils\Fishlabs.Core_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="FishlabsValheim">
+            <HintPath>..\..\..\Steam\steamapps\common\Valheim\valheim_Data\Managed\FishlabsValheim.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="ui_lib">
+            <HintPath>..\Utils\ui_lib_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>..\..\..\Steam\steamapps\common\Valheim\valheim_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>..\..\..\Steam\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UNETModule">
+            <HintPath>..\..\Unity\Unity Hub\versions\2021.3.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="AedenthornUtils.cs"/>
+        <Compile Include="Config.cs"/>
+        <Compile Include="GlobalUsings.cs"/>
+        <Compile Include="InventoryInfos.cs"/>
+        <Compile Include="Patch\FindSpawnPoint.cs"/>
+        <Compile Include="Patch\HardDeath.cs"/>
+        <Compile Include="Patch\MainOnDeath.cs"/>
+        <Compile Include="Patch\SkillsOnDeath.cs"/>
+        <Compile Include="Patch\TerminalCommand.cs"/>
+        <Compile Include="Plugin.cs"/>
+        <Compile Include="ConfigSync.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
