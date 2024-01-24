@@ -78,7 +78,7 @@ public static class Config
         }
         catch (Exception e)
         {
-            context.Logger.LogError($"Configuration error: {e.Message}");
+            DebugError($"Configuration error: {e.Message}");
         }
     }
 }
