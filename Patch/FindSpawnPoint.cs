@@ -2,13 +2,12 @@
 
 namespace DeathTweaks;
 
-[HarmonyPatch(typeof(Game), nameof(Game.FindSpawnPoint))]
-file class FindSpawnPoint
+[HarmonyPatch(typeof(Game), "FindSpawnPoint")] internal class FindSpawnPoint
 {
     [HarmonyPrefix]
-    private static bool Prefix(ref Vector3 point, ref bool usedLogoutPoint, bool ___m_firstSpawn, ref bool __result)
+    private static bool Prefix(ref Vector3 point, ref bool usedLogoutPoint, ref bool __result)
     {
-        if (!modEnabled.Value || ___m_firstSpawn)
+        if (!modEnabled.Value || Game.instance.m_firstSpawn)
             return true;
 
         if (spawnAtStart.Value)

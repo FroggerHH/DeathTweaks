@@ -13,6 +13,11 @@ using JetBrains.Annotations;
 using CompressionLevel = System.IO.Compression.CompressionLevel;
 using Debug = UnityEngine.Debug;
 
+// ReSharper disable CheckNamespace
+// ReSharper disable RedundantDefaultMemberInitializer
+// ReSharper disable UnusedMember.Local
+// ReSharper disable Unity.NoNullPropagation
+
 namespace ServerSync;
 
 [PublicAPI]

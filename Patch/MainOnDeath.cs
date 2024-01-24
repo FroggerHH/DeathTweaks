@@ -3,9 +3,9 @@ using HarmonyLib;
 
 namespace DeathTweaks;
 
-[HarmonyPatch(typeof(Player), nameof(Player.OnDeath))] //OnDeath
+[HarmonyPatch(typeof(Player), "OnDeath")]
 [HarmonyPriority(Priority.First)]
-file class MainOnDeath
+internal class MainOnDeath
 {
     private static bool Prefix(Player __instance)
     {

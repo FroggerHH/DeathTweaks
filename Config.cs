@@ -9,7 +9,20 @@ public static class Config
 {
     private static readonly string ConfigFileName = "aedenthorn.DeathTweaks.cfg";
     private static DateTime LastConfigChange;
-    private static ConfigSync configSync;
+    public static ConfigSync configSync { get; private set; }
+
+    public static void InitConfig(string modName, string modVersion)
+    {
+        configSync = new ConfigSync(modName)
+            { DisplayName = modName, CurrentVersion = modVersion, MinimumRequiredVersion = modVersion };
+        context.Config.SaveOnConfigSet = false;
+        SetupWatcher();
+        configSync.AddLockingConfigEntry(config("General", "ServerConfigLock", true,
+            "Locks client config file so it can't be modified"));
+        context.Config.ConfigReloaded += (_, _) => UpdateConfiguration();
+        context.Config.SaveOnConfigSet = true;
+        context.Config.Save();
+    }
 
     public static ConfigEntry<T> config<T>(string group, string name, T value, ConfigDescription description,
         bool synchronizedSetting = true)
@@ -32,13 +45,6 @@ public static class Config
     {
         return config(group, name, value, new ConfigDescription(description), synchronizedSetting);
     }
-
-    public static void LockConfig()
-    {
-        configSync.AddLockingConfigEntry(config("General", "ServerConfigLock", true,
-            "Locks client config file so it can't be modified"));
-    }
-
 
     private static void SetupWatcher()
     {

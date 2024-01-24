@@ -2,14 +2,12 @@
 
 namespace DeathTweaks;
 
-[HarmonyPatch(typeof(Player), nameof(Player.OnDeath))]
-file class HardDeath
+[HarmonyPatch(typeof(Player), "OnDeath")] internal class HardDeath
 {
     [HarmonyPrefix]
-    private static bool Prefix(ref bool __result)
+    private static bool Prefix()
     {
         if (!modEnabled.Value || !noSkillProtection.Value) return true;
-        __result = true;
         return false;
     }
 }

@@ -2,8 +2,7 @@
 
 namespace DeathTweaks;
 
-[HarmonyPatch(typeof(Skills), nameof(Skills.OnDeath))]
-file class SkillsOnDeath
+[HarmonyPatch(typeof(Skills), "OnDeath")] internal class SkillsOnDeath
 {
     [HarmonyPrefix]
     private static bool Prefix()

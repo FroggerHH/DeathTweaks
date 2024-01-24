@@ -50,6 +50,8 @@ public class Plugin : BaseUnityPlugin
         foreach (int i in Enum.GetValues(typeof(ItemDrop.ItemData.ItemType)))
             typeEnums.Add(Enum.GetName(typeof(ItemDrop.ItemData.ItemType), i));
 
+        InitConfig("DeathTweaks", "1.4.0");
+
         modEnabled = config("General", "Enabled", true, "Enable this mod");
         isDebug = config("General", "IsDebug", true, "Enable debug logs");
         nexusID = config("General", "NexusID", 1068, "Nexus mod ID for updates");
@@ -97,15 +99,19 @@ public class Plugin : BaseUnityPlugin
     }
 
 
-    public static void Debug(object msg, bool pref = true)
+    private void _Debug(object msg)
     {
         if (!isDebug.Value) return;
-        context.Logger.LogDebug(msg);
+        Logger.LogDebug(msg);
     }
 
-    public static void DebugError(object msg, bool pref = true)
+    private void _DebugError(object msg)
     {
         if (!isDebug.Value) return;
-        context.Logger.LogError(msg);
+        Logger.LogError(msg);
     }
+
+    public static void Debug(object msg) { context._Debug(msg); }
+
+    public static void DebugError(object msg) { context._DebugError(msg); }
 }

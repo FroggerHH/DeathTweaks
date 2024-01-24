@@ -2,8 +2,8 @@
 
 namespace DeathTweaks;
 
-[HarmonyPatch(typeof(Terminal), nameof(Terminal.InputText))] [HarmonyWrapSafe]
-file class TerminalCommand
+[HarmonyPatch(typeof(Terminal), "InputText")] [HarmonyWrapSafe]
+internal class TerminalCommand
 {
     [HarmonyPrefix]
     private static bool Prefix(Terminal __instance)
